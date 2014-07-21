@@ -9,12 +9,14 @@
 Shader "Demo/001 Ambient Lighting"
 {
 	// Here we define properties exposed in the material for user to control
+	// We also provide default values in the definition
 	Properties
 	{
 		// Defining ambient color property as a float4
 		_AmbientColor ("Ambient Color", Color) = (1.0, 1.0, 1.0, 1.0)
 	}
 	// There can be multiple shaders based on platform? GPU? Deployment?
+	// Each of those are divided into SubShaders
 	SubShader
 	{
 		// There can be multiple passes of calculation
