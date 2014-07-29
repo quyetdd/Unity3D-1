@@ -13,7 +13,7 @@
 //					Starting with Cutaway or Alpha test texture.
 //
 // Defining category and name of the shader
-Shader "Demo/101 Transparent Cutaway"
+Shader "MyShaders/Transparency/101 Transparent Cutaway"
 {
 	// Here we define properties exposed in the material for user to control
 	Properties

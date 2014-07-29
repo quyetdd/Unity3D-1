@@ -11,7 +11,7 @@
 //
 
 // Defining category and name of the shader
-Shader "Demo/004 Rim Lighting"
+Shader "MyShaders/BRDF_Lighting/004 Rim Lighting"
 {
 	// Here we define properties exposed in the material for user to control
 	Properties

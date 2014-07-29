@@ -10,7 +10,7 @@
 //
 
 // Defining category and name of the shader
-Shader "Demo/002b Diffuse Lighting - Pixel Lit"
+Shader "MyShaders/BRDF_Lighting/002b Diffuse Lighting - Pixel Lit"
 {
 	// Here we define properties exposed in the material for user to control
 	Properties

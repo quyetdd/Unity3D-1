@@ -13,7 +13,7 @@
 //					
 //
 // Defining category and name of the shader
-Shader "Demo/007 SpecGloss and Emissive Mapping"
+Shader "MyShaders/BRDF_Lighting/007 SpecGloss and Emissive Mapping"
 {
 	// Here we define properties exposed in the material for user to control
 	Properties

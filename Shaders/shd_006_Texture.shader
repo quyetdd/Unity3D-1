@@ -13,7 +13,7 @@
 //					Starting with Diffuse texture only.
 //
 // Defining category and name of the shader
-Shader "Demo/006 Texture Mapping"
+Shader "MyShaders/BRDF_Lighting/006 Texture Mapping"
 {
 	// Here we define properties exposed in the material for user to control
 	Properties

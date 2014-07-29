@@ -6,7 +6,7 @@
 //					Fragment shader returns a color.
 
 // Defining category and name of the shader
-Shader "Demo/001 Ambient Lighting"
+Shader "MyShaders/BRDF_Lighting/001 Ambient Lighting"
 {
 	// Here we define properties exposed in the material for user to control
 	// We also provide default values in the definition

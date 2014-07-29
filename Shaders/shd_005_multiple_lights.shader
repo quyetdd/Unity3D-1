@@ -14,7 +14,7 @@
 //					It basically calculates lights in multiple passes and blends them
 //				
 // Defining category and name of the shader
-Shader "Demo/005 Multipe Lights"
+Shader "MyShaders/BRDF_Lighting/005 Multipe Lights"
 {
 	// Here we define properties exposed in the material for user to control
 	Properties
