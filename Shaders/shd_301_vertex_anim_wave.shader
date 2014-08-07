@@ -4,6 +4,7 @@
 	{
 		WaveFrequency("Wave Frequency", Range(0.0,5.0)) = 1.0
 		WaveAmplitude("Wave Amplitude", Range(0.0,5.0)) = 1.0
+		WaveSpeed("Wave Speed", Range(0.1,5.0)) = 1.0
 	}
 	SubShader
 	{
@@ -18,6 +19,7 @@
 
 			uniform float WaveFrequency;
 			uniform	float WaveAmplitude;
+			uniform float WaveSpeed;
 
 			struct vertexIn
 			{
@@ -38,7 +40,7 @@
 			{
 				fragmentIn fragIn;
 
-				vertIn.vertPos.y += sin(vertIn.vertPos.x * WaveFrequency) * WaveAmplitude;
+				vertIn.vertPos.y += sin(vertIn.vertPos.x * WaveFrequency + (_Time.y * WaveSpeed)) * WaveAmplitude;
 
 				fragIn.fragPos = mul(UNITY_MATRIX_MVP, vertIn.vertPos);
 				fragIn.posWorld = mul(_Object2World, vertIn.vertPos);
@@ -49,7 +51,7 @@
 			{
 
 				fragIn.fragColor = float4(0.5,0.5,0.5,1);
-				fragIn.fragColor.y = fragIn.posWorld.y;
+				fragIn.fragColor.z = fragIn.posWorld.y;
 				return fragIn.fragColor;
 			}
 
