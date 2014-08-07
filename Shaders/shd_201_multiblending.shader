@@ -11,7 +11,7 @@ Shader "MyShaders/Pixel Techniques/201 MultiBlending"
 	Properties
 	{
 		// Ambient color as float4
-		_AmbientColor ("Ambient Color", Color) = (1.0, 1.0, 1.0, 1.0)
+		_AmbientColor ("Ambient Color", Color) = (1.0, 1.0, 1.0, 1.0)	
 		// Defining Diffuse color property as a float4
 		_DiffuseColor ("Diffuse Color", Color) = (1.0, 1.0, 1.0, 1.0)
 		// Defining Specular color as float4
