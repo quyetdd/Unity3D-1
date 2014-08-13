@@ -7,7 +7,7 @@ Shader "MyShaders/Procedural - Checker"
 {
 	Properties
 	{
-
+		_TilesCount("Tiles Count", Float)		= 8.0
 	}
 	SubShader
 	{
@@ -17,6 +17,9 @@ Shader "MyShaders/Procedural - Checker"
 			
 			#pragma vertex 		vertexCode
 			#pragma fragment	fragmentCode
+
+			uniform float 	_TilesCount;
+
 
 			struct vertIn
 			{
@@ -44,16 +47,16 @@ Shader "MyShaders/Procedural - Checker"
 				float4 white = float4(1.0,1.0,1.0,1.0);
 				float4 black = float4(0.0,0.0,0.0,1.0);
 
-				if(fmod(f.uv.x * 8, 2) > 1)
+				if(fmod(f.uv.x * _TilesCount, 2) > 1)
 				{
-					if(fmod(f.uv.y * 8, 2) > 1)
+					if(fmod(f.uv.y * _TilesCount, 2) > 1)
 						f.color = white;
 					else
 						f.color = black;
 				}
 				else
 				{
-					if(fmod(f.uv.y * 8, 2) < 1)
+					if(fmod(f.uv.y * _TilesCount, 2) < 1)
 						f.color = white;
 					else
 						f.color = black;
