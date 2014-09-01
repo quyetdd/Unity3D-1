@@ -3,7 +3,10 @@ Shader "_MyShaders/GLSL Functions"
 {
 	Properties
 	{
-		_AmbientColor("Ambient Color", Color) = (0.2, 0.3, 0.7, 1.0)
+		_AmbientColor("Ambient Color", Color) 	= (0.2, 0.3, 0.7, 1.0)
+		_Parm1 ("Parm1", Range(0.0, 0.5)) 		= 0.0
+		_Parm2 ("Parm2", Range(0.0, 0.5)) 		= 0.0
+		_Parm3 ("Parm3", Range(1.0, 10.0)) 		= 2.0
 	}
 	SubShader
 	{
@@ -15,6 +18,9 @@ Shader "_MyShaders/GLSL Functions"
 			#pragma fragment 	fragmentCode
 
 			uniform float4		_AmbientColor;
+			uniform float 		_Parm1;
+			uniform float 		_Parm2;
+			uniform float 		_Parm3;
 
 			struct vertInput
 			{
@@ -40,9 +46,9 @@ Shader "_MyShaders/GLSL Functions"
 			float4 fragmentCode(fragInput fragIn) : COLOR0
 			{
 
-				float uvOut = fmod(fragIn.uv.xy, 1.0) > 0.5;
+				float uvOut = length(fmod(fragIn.uv.xy * _Parm3, 1.0) - _Parm1) > _Parm2;
 
-				fragIn.color = float4(uvOut, uvOut, 0.0, 1.0);
+				fragIn.color = float4(uvOut, uvOut, 1.0, 1.0);
 
 				return fragIn.color;
 			}
